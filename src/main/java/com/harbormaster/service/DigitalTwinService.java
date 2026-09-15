@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -248,7 +249,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignDevice(command.getDigitalTwinId(), command.getAssignment());
+		projector.assignDevice(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -266,7 +267,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignDevice(command.getDigitalTwinId());
+		projector.unAssignDevice(command.getChildId());
 	}
 	
 	/**
@@ -282,7 +283,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignGateway(command.getDigitalTwinId(), command.getAssignment());
+		projector.assignGateway(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -300,7 +301,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignGateway(command.getDigitalTwinId());
+		projector.unAssignGateway(command.getChildId());
 	}
 	
 	/**
@@ -316,7 +317,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignTemplate(command.getDigitalTwinId(), command.getAssignment());
+		projector.assignTemplate(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -334,7 +335,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignTemplate(command.getDigitalTwinId());
+		projector.unAssignTemplate(command.getChildId());
 	}
 	
 
@@ -352,7 +353,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToChangeEvents(command.getDigitalTwinId(), command.getAddTo());
+		projector.addToChangeEvents(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -368,7 +369,7 @@ public class DigitalTwinService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromChangeEvents(command.getDigitalTwinId(), command.getRemoveFrom());
+		projector.removeFromChangeEvents(command.getParentId(), command.getChildIds());
 	}
 
 

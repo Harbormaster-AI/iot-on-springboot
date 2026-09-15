@@ -7,7 +7,7 @@ Harbormaster
 
 
 ## Application
-- Name: iot-on-springboot
+- Name: iotOnSpringboot
 - Description: Banking Restful Backend
 - Company Name: Turnstone National Bank
 

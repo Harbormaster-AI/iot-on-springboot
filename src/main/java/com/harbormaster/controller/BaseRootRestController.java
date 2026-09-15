@@ -31,7 +31,7 @@ public class BaseRootRestController extends BaseSpringRestController {
 
     @GetMapping("/")
     public ResponseEntity<String> root() {
-        return ResponseEntity.ok("iot-on-springboot is running.");
+        return ResponseEntity.ok("iotOnSpringboot is running.");
     }
 
     @GetMapping("/system")

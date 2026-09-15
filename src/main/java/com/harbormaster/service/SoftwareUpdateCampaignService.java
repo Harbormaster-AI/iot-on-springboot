@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -247,7 +248,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignFirmwareRelease(command.getSoftwareUpdateCampaignId(), command.getAssignment());
+		projector.assignFirmwareRelease(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -265,7 +266,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignFirmwareRelease(command.getSoftwareUpdateCampaignId());
+		projector.unAssignFirmwareRelease(command.getChildId());
 	}
 	
 	/**
@@ -281,7 +282,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignDeviceGroup(command.getSoftwareUpdateCampaignId(), command.getAssignment());
+		projector.assignDeviceGroup(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -299,7 +300,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignDeviceGroup(command.getSoftwareUpdateCampaignId());
+		projector.unAssignDeviceGroup(command.getChildId());
 	}
 	
 
@@ -317,7 +318,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToExecutions(command.getSoftwareUpdateCampaignId(), command.getAddTo());
+		projector.addToExecutions(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -333,7 +334,7 @@ public class SoftwareUpdateCampaignService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromExecutions(command.getSoftwareUpdateCampaignId(), command.getRemoveFrom());
+		projector.removeFromExecutions(command.getParentId(), command.getChildIds());
 	}
 
 

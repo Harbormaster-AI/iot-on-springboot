@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -249,7 +250,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDeviceModels(command.getDeviceVendorId(), command.getAddTo());
+		projector.addToDeviceModels(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -265,7 +266,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDeviceModels(command.getDeviceVendorId(), command.getRemoveFrom());
+		projector.removeFromDeviceModels(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -282,7 +283,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToFirmwareReleases(command.getDeviceVendorId(), command.getAddTo());
+		projector.addToFirmwareReleases(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -298,7 +299,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromFirmwareReleases(command.getDeviceVendorId(), command.getRemoveFrom());
+		projector.removeFromFirmwareReleases(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -315,7 +316,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToHardwareModules(command.getDeviceVendorId(), command.getAddTo());
+		projector.addToHardwareModules(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -331,7 +332,7 @@ public class DeviceVendorService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromHardwareModules(command.getDeviceVendorId(), command.getRemoveFrom());
+		projector.removeFromHardwareModules(command.getParentId(), command.getChildIds());
 	}
 
 

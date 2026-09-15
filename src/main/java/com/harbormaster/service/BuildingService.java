@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -240,7 +241,7 @@ public class BuildingService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignSite(command.getBuildingId(), command.getAssignment());
+		projector.assignSite(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -258,7 +259,7 @@ public class BuildingService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignSite(command.getBuildingId());
+		projector.unAssignSite(command.getChildId());
 	}
 	
 
@@ -276,7 +277,7 @@ public class BuildingService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToFloors(command.getBuildingId(), command.getAddTo());
+		projector.addToFloors(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -292,7 +293,7 @@ public class BuildingService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromFloors(command.getBuildingId(), command.getRemoveFrom());
+		projector.removeFromFloors(command.getParentId(), command.getChildIds());
 	}
 
 

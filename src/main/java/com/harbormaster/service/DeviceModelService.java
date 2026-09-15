@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -251,7 +252,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignVendor(command.getDeviceModelId(), command.getAssignment());
+		projector.assignVendor(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -269,7 +270,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignVendor(command.getDeviceModelId());
+		projector.unAssignVendor(command.getChildId());
 	}
 	
 	/**
@@ -285,7 +286,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignTwinTemplate(command.getDeviceModelId(), command.getAssignment());
+		projector.assignTwinTemplate(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -303,7 +304,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignTwinTemplate(command.getDeviceModelId());
+		projector.unAssignTwinTemplate(command.getChildId());
 	}
 	
 
@@ -321,7 +322,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToHardwareModules(command.getDeviceModelId(), command.getAddTo());
+		projector.addToHardwareModules(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -337,7 +338,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromHardwareModules(command.getDeviceModelId(), command.getRemoveFrom());
+		projector.removeFromHardwareModules(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -354,7 +355,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToFirmwareReleases(command.getDeviceModelId(), command.getAddTo());
+		projector.addToFirmwareReleases(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -370,7 +371,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromFirmwareReleases(command.getDeviceModelId(), command.getRemoveFrom());
+		projector.removeFromFirmwareReleases(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -387,7 +388,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToCommandDefinitions(command.getDeviceModelId(), command.getAddTo());
+		projector.addToCommandDefinitions(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -403,7 +404,7 @@ public class DeviceModelService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromCommandDefinitions(command.getDeviceModelId(), command.getRemoveFrom());
+		projector.removeFromCommandDefinitions(command.getParentId(), command.getChildIds());
 	}
 
 

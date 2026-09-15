@@ -10,10 +10,10 @@ Blueprint Version    1.1
 Domain Model         ${model.getName()}
 Model Version        ${model.getMeta}
 
-Verification         Blueprint - NONE
+Verification         Blueprint - BRONZE
                      Domain Model - Uncertified
 
-Generated            2026-09-01 21:01
+Generated            2026-09-14 21:50
 System ID            ${systemIdentifier}
 
 ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ

@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -254,7 +255,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToSites(command.getTenantId(), command.getAddTo());
+		projector.addToSites(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -270,7 +271,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromSites(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromSites(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -287,7 +288,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToUsers(command.getTenantId(), command.getAddTo());
+		projector.addToUsers(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -303,7 +304,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromUsers(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromUsers(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -320,7 +321,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDevices(command.getTenantId(), command.getAddTo());
+		projector.addToDevices(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -336,7 +337,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDevices(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromDevices(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -353,7 +354,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDataRetentionPolicies(command.getTenantId(), command.getAddTo());
+		projector.addToDataRetentionPolicies(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -369,7 +370,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDataRetentionPolicies(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromDataRetentionPolicies(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -386,7 +387,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToConnectivityPlans(command.getTenantId(), command.getAddTo());
+		projector.addToConnectivityPlans(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -402,7 +403,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromConnectivityPlans(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromConnectivityPlans(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -419,7 +420,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToSimCards(command.getTenantId(), command.getAddTo());
+		projector.addToSimCards(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -435,7 +436,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromSimCards(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromSimCards(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -452,7 +453,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToMessagingEndpoints(command.getTenantId(), command.getAddTo());
+		projector.addToMessagingEndpoints(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -468,7 +469,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromMessagingEndpoints(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromMessagingEndpoints(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -485,7 +486,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToAccessPolicies(command.getTenantId(), command.getAddTo());
+		projector.addToAccessPolicies(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -501,7 +502,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromAccessPolicies(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromAccessPolicies(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -518,7 +519,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDeviceGroups(command.getTenantId(), command.getAddTo());
+		projector.addToDeviceGroups(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -534,7 +535,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDeviceGroups(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromDeviceGroups(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -551,7 +552,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToAlertRules(command.getTenantId(), command.getAddTo());
+		projector.addToAlertRules(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -567,7 +568,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromAlertRules(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromAlertRules(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -584,7 +585,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToMaintenanceTickets(command.getTenantId(), command.getAddTo());
+		projector.addToMaintenanceTickets(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -600,7 +601,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromMaintenanceTickets(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromMaintenanceTickets(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -617,7 +618,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToUsageRecords(command.getTenantId(), command.getAddTo());
+		projector.addToUsageRecords(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -633,7 +634,7 @@ public class TenantService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromUsageRecords(command.getTenantId(), command.getRemoveFrom());
+		projector.removeFromUsageRecords(command.getParentId(), command.getChildIds());
 	}
 
 

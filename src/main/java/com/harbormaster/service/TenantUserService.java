@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -246,7 +247,7 @@ public class TenantUserService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignTenant(command.getTenantUserId(), command.getAssignment());
+		projector.assignTenant(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -264,7 +265,7 @@ public class TenantUserService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignTenant(command.getTenantUserId());
+		projector.unAssignTenant(command.getChildId());
 	}
 	
 
@@ -282,7 +283,7 @@ public class TenantUserService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToCommandInvocations(command.getTenantUserId(), command.getAddTo());
+		projector.addToCommandInvocations(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -298,7 +299,7 @@ public class TenantUserService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromCommandInvocations(command.getTenantUserId(), command.getRemoveFrom());
+		projector.removeFromCommandInvocations(command.getParentId(), command.getChildIds());
 	}
 
 

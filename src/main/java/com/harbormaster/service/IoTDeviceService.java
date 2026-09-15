@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -263,7 +264,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignDeviceModel(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignDeviceModel(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -281,7 +282,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignDeviceModel(command.getIoTDeviceId());
+		projector.unAssignDeviceModel(command.getChildId());
 	}
 	
 	/**
@@ -297,7 +298,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignTenant(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignTenant(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -315,7 +316,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignTenant(command.getIoTDeviceId());
+		projector.unAssignTenant(command.getChildId());
 	}
 	
 	/**
@@ -331,7 +332,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignSite(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignSite(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -349,7 +350,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignSite(command.getIoTDeviceId());
+		projector.unAssignSite(command.getChildId());
 	}
 	
 	/**
@@ -365,7 +366,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignRoom(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignRoom(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -383,7 +384,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignRoom(command.getIoTDeviceId());
+		projector.unAssignRoom(command.getChildId());
 	}
 	
 	/**
@@ -399,7 +400,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignGateway(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignGateway(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -417,7 +418,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignGateway(command.getIoTDeviceId());
+		projector.unAssignGateway(command.getChildId());
 	}
 	
 	/**
@@ -433,7 +434,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignDigitalTwin(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignDigitalTwin(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -451,7 +452,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignDigitalTwin(command.getIoTDeviceId());
+		projector.unAssignDigitalTwin(command.getChildId());
 	}
 	
 	/**
@@ -467,7 +468,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignProvisioningRecord(command.getIoTDeviceId(), command.getAssignment());
+		projector.assignProvisioningRecord(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -485,7 +486,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignProvisioningRecord(command.getIoTDeviceId());
+		projector.unAssignProvisioningRecord(command.getChildId());
 	}
 	
 
@@ -503,7 +504,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToSensors(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToSensors(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -519,7 +520,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromSensors(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromSensors(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -536,7 +537,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToActuators(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToActuators(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -552,7 +553,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromActuators(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromActuators(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -569,7 +570,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToCertificates(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToCertificates(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -585,7 +586,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromCertificates(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromCertificates(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -602,7 +603,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToTelemetryStreams(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToTelemetryStreams(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -618,7 +619,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromTelemetryStreams(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromTelemetryStreams(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -635,7 +636,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToCommandInvocations(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToCommandInvocations(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -651,7 +652,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromCommandInvocations(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromCommandInvocations(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -668,7 +669,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToAlerts(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToAlerts(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -684,7 +685,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromAlerts(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromAlerts(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -701,7 +702,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDeviceGroups(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToDeviceGroups(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -717,7 +718,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDeviceGroups(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromDeviceGroups(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -734,7 +735,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToNetworkProfiles(command.getIoTDeviceId(), command.getAddTo());
+		projector.addToNetworkProfiles(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -750,7 +751,7 @@ public class IoTDeviceService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromNetworkProfiles(command.getIoTDeviceId(), command.getRemoveFrom());
+		projector.removeFromNetworkProfiles(command.getParentId(), command.getChildIds());
 	}
 
 

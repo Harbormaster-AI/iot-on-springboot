@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -247,7 +248,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignSite(command.getGatewayId(), command.getAssignment());
+		projector.assignSite(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -265,7 +266,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignSite(command.getGatewayId());
+		projector.unAssignSite(command.getChildId());
 	}
 	
 	/**
@@ -281,7 +282,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignRoom(command.getGatewayId(), command.getAssignment());
+		projector.assignRoom(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -299,7 +300,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignRoom(command.getGatewayId());
+		projector.unAssignRoom(command.getChildId());
 	}
 	
 	/**
@@ -315,7 +316,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignDigitalTwin(command.getGatewayId(), command.getAssignment());
+		projector.assignDigitalTwin(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -333,7 +334,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignDigitalTwin(command.getGatewayId());
+		projector.unAssignDigitalTwin(command.getChildId());
 	}
 	
 
@@ -351,7 +352,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToDevices(command.getGatewayId(), command.getAddTo());
+		projector.addToDevices(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -367,7 +368,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromDevices(command.getGatewayId(), command.getRemoveFrom());
+		projector.removeFromDevices(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -384,7 +385,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToEdgeApplications(command.getGatewayId(), command.getAddTo());
+		projector.addToEdgeApplications(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -400,7 +401,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromEdgeApplications(command.getGatewayId(), command.getRemoveFrom());
+		projector.removeFromEdgeApplications(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -417,7 +418,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToCertificates(command.getGatewayId(), command.getAddTo());
+		projector.addToCertificates(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -433,7 +434,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromCertificates(command.getGatewayId(), command.getRemoveFrom());
+		projector.removeFromCertificates(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -450,7 +451,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToNetworkProfiles(command.getGatewayId(), command.getAddTo());
+		projector.addToNetworkProfiles(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -466,7 +467,7 @@ public class GatewayService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromNetworkProfiles(command.getGatewayId(), command.getRemoveFrom());
+		projector.removeFromNetworkProfiles(command.getParentId(), command.getChildIds());
 	}
 
 

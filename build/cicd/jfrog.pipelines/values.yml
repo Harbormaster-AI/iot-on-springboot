@@ -2,7 +2,7 @@ gitRepo:
   gitProvider: 
   path: /iot-on-springboot
   TestDBUrl: 
-  TestDBName: iotonspringboot_test_db
+  TestDBName: iotOnSpringboot_test_db
   TestDBPassword: 
   TestDBDialect: org.hibernate.dialect.MySQL8Dialect 
   TestDBDriver: com.mysql.cj.jdbc.Driver

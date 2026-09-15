@@ -21,6 +21,7 @@
  * Contributors :
  *       Turnstone National Bank - General Release
  */
+
 package com.harbormaster.service;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ import com.harbormaster.security.*;
  *      <h3>Blueprint</h3>
  * 			<table>
  *          <tr><td>name</td><td>Spring Boot 3.5</td></tr>
- *          <tr><td>published</td><td>08/21/2026</td></tr>
+ *          <tr><td>published</td><td>09/14/2026</td></tr>
  *          <tr><td>design pattern</td><td>ServiceLayer</td></tr>
  *          <tr><td>architecture style</td><td>Layered</td></tr>
  *          </table>
@@ -245,7 +246,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.assignTenant(command.getAccessPolicyId(), command.getAssignment());
+		projector.assignTenant(command.getChildId(), command.getAssignment());
 
 	}
 
@@ -263,7 +264,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.unAssignTenant(command.getAccessPolicyId());
+		projector.unAssignTenant(command.getChildId());
 	}
 	
 
@@ -281,7 +282,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToApiKeys(command.getAccessPolicyId(), command.getAddTo());
+		projector.addToApiKeys(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -297,7 +298,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromApiKeys(command.getAccessPolicyId(), command.getRemoveFrom());
+		projector.removeFromApiKeys(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -314,7 +315,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.addToUsers(command.getAccessPolicyId(), command.getAddTo());
+		projector.addToUsers(command.getParentId(), command.getChildIds());
 	}
 
 	/**
@@ -330,7 +331,7 @@ public class AccessPolicyService
 		// --------------------------------------
 		// delegate to the projector
 		// --------------------------------------
-		projector.removeFromUsers(command.getAccessPolicyId(), command.getRemoveFrom());
+		projector.removeFromUsers(command.getParentId(), command.getChildIds());
 	}
 
 
