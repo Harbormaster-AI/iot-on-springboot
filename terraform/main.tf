@@ -12,7 +12,7 @@ provider "aws" {
       CreatedBy = "Harbormaster"
       Blueprint = "Spring Boot 3.5"
       DomainModel = "IoT Industry Domain Model"
-      CertificationId = "20230080-5b5f-4c2f-8d4f-31c1ac623975"
+      CertificationId = "595d4c3f-4985-4759-85dc-cb4e4c54ab08"
     }
   }
 }
@@ -39,7 +39,7 @@ resource "local_file" "private_key_pem" {
 }
 
 resource "aws_key_pair" "generated" {
-  key_name   = "pjsk-sshtest-0.46934729766176475"
+  key_name   = "pjsk-sshtest-0.6224614145909092"
   public_key = tls_private_key.generated.public_key_openssh
 
   lifecycle {
